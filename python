@@ -1,0 +1,64 @@
+#Welcome to my code for a strong password generator, I've broken it down into steps if you'd like to follow along.
+import random
+
+#Step 1: Define our lists of available symbols, letters, and numbers:
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+#Step 2: Print a welcome statement to the user:
+print("Are you sick of your Facebook account getting hacked? Is your password qwerty123? Sounds like you need a new, strong password. This is the perfect tool for you!")
+
+#Step 3: Display a user prompt for the number of letters:
+input_of_letters= int(input("How many letters do you want in your password?\n")) 
+#Step 4: Only continue if thee put a value higher than 0
+if input_of_letters == 0:
+  print("Your password needs to have at least one letter, please restart.")
+elif input_of_letters >0:
+  
+  #Step 5: Display a user prompt for the number of numbers:
+  input_of_numbers = int(input("How many numbers do you want in your passsword?\n"))
+  #Step 6: Only continue if they put a value higher than 0
+  if input_of_numbers == 0:
+    print("Your password needs to have at least one number, please restart.")
+  elif input_of_numbers >0:
+      
+    #Step 7: Display a user prompt for the number of symbols:
+    input_of_symbols = int(input("How many special characters do you want in your password?\n"))
+    #Step 8: Only continue if they put a value higher than 0
+    if input_of_symbols == 0:
+      print("Your password needs to have at least one special character, please restart.")
+    elif input_of_symbols >0:
+      
+      #Step 9: Reject password if total number of characters is less than 8
+      if input_of_letters + input_of_numbers + input_of_symbols < 8:
+        print("Your password is going to be too short, and therefore easy to brute force, you should make it at least 8 characters long, please restart.")
+        
+        #Step 10: If the password is long enough, we will proceed with generation.
+      elif input_of_letters + input_of_numbers + input_of_symbols >= 8:
+        
+        #Step 11: Creating an empty list to store the inputs for the new password
+        listed_password = []
+        
+        #Step 12: Use for loops to update the password list with random letters, numbers, and symbols
+        for char in range(1, input_of_letters +1):
+          listed_password.append(random.choice(letters))
+        for char in range(1, input_of_numbers +1):
+          listed_password.append(random.choice(numbers))
+        for char in range(1, input_of_symbols +1):
+          listed_password.append(random.choice(symbols))
+          
+        #Step 13: Use shuffle function to randomize locations of all characters in the list
+        random.shuffle(listed_password)        
+
+#Step 14: Turn the list into a string using a for loop and a new variable
+        final_password = ""
+        for char in listed_password:
+          final_password += char
+
+        #Step 15: Using an f string, print the final message with the user's new password password
+        print(f" Your days of being hacked are over, here is your new, hopefully uncrackable password: {final_password}")
+        
+          
+    
+    
