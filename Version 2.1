@@ -1,4 +1,5 @@
-#Welcome to my code for a strong password generator, I've broken it down into steps if you'd like to follow along.
+#Welcome to my code for a strong password generator, this was a project to showcase my recent learning of several python fundamentals, such as loops, lists, if statements, randomization, and much more. I've broken it down into steps for an easy follow-along
+
 import random
 
 #Step 1: Define our lists of available symbols, letters, and numbers:
@@ -11,6 +12,7 @@ print("Are you sick of your Facebook account getting hacked? Is your password qw
 
 #Step 3: Display a user prompt for the number of letters:
 input_of_letters= int(input("How many letters do you want in your password?\n")) 
+
 #Step 4: Only continue if thee put a value higher than 0
 if input_of_letters == 0:
   print("Your password needs to have at least one letter, please restart.")
@@ -18,6 +20,7 @@ elif input_of_letters >0:
   
   #Step 5: Display a user prompt for the number of numbers:
   input_of_numbers = int(input("How many numbers do you want in your passsword?\n"))
+  
   #Step 6: Only continue if they put a value higher than 0
   if input_of_numbers == 0:
     print("Your password needs to have at least one number, please restart.")
@@ -25,6 +28,7 @@ elif input_of_letters >0:
       
     #Step 7: Display a user prompt for the number of symbols:
     input_of_symbols = int(input("How many special characters do you want in your password?\n"))
+    
     #Step 8: Only continue if they put a value higher than 0
     if input_of_symbols == 0:
       print("Your password needs to have at least one special character, please restart.")
